@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    background-color: #1f1f1f;
+    color: #dddd98
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+nav li {
+    margin: 10px 0;
+}
+
+nav a {
+    display: block;
+    width: 150px;
+    font-size: 1.1em;
+    font-family: 'GlacialIndifferenceRegular';
+    color: #dddd98;
+    transition: background-color 0.25s, color 0.25s;
+    padding: 3px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #1f1f1f;
+    background-color: #dddd98;
+}
+
+h1 {
+    margin: 0 0 20px 0;
+    font-family: 'GlacialIndifferenceRegular';
+    font-size: 3em;
+    text-align: center;
+    border-bottom: solid;
+    border-width: 2px;
+}
+
+.wrapper {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+.infobox {
+    position: relative;
+    width: 700px;
+    height: 500px;
+    margin: 0 auto;
+    top: 15vh;
+}
