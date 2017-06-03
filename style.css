@@ -1,7 +1,37 @@
+:root {
+    --bg-color: #0f084b;
+    --fg-color: #a6cfd5;
+}
+
 body {
+    font-family: 'GlacialIndifferenceRegular';
     margin: 0;
-    background-color: #1f1f1f;
-    color: #dddd98
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+}
+
+a, .section-name {
+    transition: background-color 0.125s, color 0.125s;
+    color: var(--fg-color);
+}
+
+a:hover, .section-name:hover, nav .active-section-name {
+    background-color: var(--fg-color);
+    color: var(--bg-color);
+}
+
+h1 {
+    margin: 0 0 20px 0;
+    font-size: 3em;
+    text-align: center;
+    border-bottom: solid;
+    border-width: 2px;
+}
+
+nav {
+    width: 30%;
+    float: left;
+    display: inline;
 }
 
 nav ul {
@@ -14,29 +44,27 @@ nav li {
     margin: 10px 0;
 }
 
-nav a {
+.section-name {
     display: block;
     width: 150px;
     font-size: 1.1em;
-    font-family: 'GlacialIndifferenceRegular';
-    color: #dddd98;
-    transition: background-color 0.25s, color 0.25s;
     padding: 3px;
     text-decoration: none;
+    cursor: pointer;
 }
 
-nav a:hover {
-    color: #1f1f1f;
-    background-color: #dddd98;
+main {
+    width: 70%;
+    float: left;
+    display: inline;
 }
 
-h1 {
-    margin: 0 0 20px 0;
-    font-family: 'GlacialIndifferenceRegular';
-    font-size: 3em;
-    text-align: center;
-    border-bottom: solid;
-    border-width: 2px;
+.content {
+    display: none;
+}
+
+main div.active-content {
+    display: block;
 }
 
 .wrapper {

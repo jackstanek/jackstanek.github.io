@@ -9,32 +9,50 @@
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/glacial-indifference" type="text/css"/>
     <!-- Serif font -->
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/open-baskerville" type="text/css"/>
+
+    <script src="viewport.js"></script>
   </head>
   <body>
     <div class="wrapper">
-      <div >
-      <header>
-        <h1>Jack Stanek</h1>
-      </header>
-      <nav>
-        <ul class="nav">
-          <li>
-            <a href="#bio">About</a>
-          </li>
-          <li>
-            <a href="#projects">Projects</a>
-          </li>
-          <li>
-            <a href="#music">Music</a>
-          </li>
-          <li>
-            <a href="#social">Social</a>
-          </li>
-        </ul>
-      </nav>
-      <main>
-        Oh hey friends.
-      </main>
+      <div class="infobox">
+        <header>
+          <h1>Jack Stanek</h1>
+        </header>
+        <nav>
+          <ul class="navbar">
+            <li>
+              <span id="bio" class="section-name active-section-name">About</a>
+            </li>
+            <li>
+              <span id="projects" class="section-name">Projects</a>
+            </li>
+            <li>
+              <span id="music" class="section-name">Music</a>
+            </li>
+            <li>
+              <span id="social" class="section-name">Social</a>
+            </li>
+          </ul>
+        </nav>
+        <main>
+          <div class="content active-content" id="bio">
+            Hello! I'm Jack Stanek, and I'm an undergrad at the University
+            of Minnesota, Twin Cities, studying computer science,
+            mathematics, and German. In addition to my studies, I love to
+            listen to and make a lot of different kinds of music.
+          </div>
+          <div class="content" id="projects">
+          </div>
+          <div class="content" id="music">
+            I'm unfortunately not working on much music right
+            now... Once I start making music again, I'll post it here.
+          </div>
+          <div class="content" id="social">
+          </div>
+        </main>
+      </div>
+      <div id="footer">
+      </div>
     </div>
   </body>
 </html>
