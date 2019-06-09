@@ -1,10 +1,10 @@
 :root {
-    --bg-color: #0f084b;
-    --fg-color: #a6cfd5;
+    --bg-color: #222;
+    --fg-color: #eee;
 }
 
 body {
-    font-family: 'GlacialIndifferenceRegular';
+    font-family: 'Linux Libertine';
     margin: 0;
     background-color: var(--bg-color);
     color: var(--fg-color);
@@ -26,6 +26,7 @@ h1 {
     text-align: center;
     border-bottom: solid;
     border-width: 2px;
+    padding-bottom: 7px;
 }
 
 nav {
@@ -44,39 +45,24 @@ nav li {
     margin: 10px 0;
 }
 
-.section-name {
-    display: block;
-    width: 150px;
-    font-size: 1.1em;
-    padding: 3px;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-main {
-    width: 70%;
-    float: left;
-    display: inline;
-}
-
 .content {
     display: none;
 }
 
-main div.active-content {
-    display: block;
+main {
+    padding-bottom: 5vh;
 }
 
 .wrapper {
     position: fixed;
     width: 100vw;
     height: 100vh;
+    overflow-y: scroll;
 }
 
 .infobox {
     position: relative;
-    width: 700px;
-    height: 500px;
+    width: 500px;
     margin: 0 auto;
-    top: 15vh;
+    top: 5vh;
 }
