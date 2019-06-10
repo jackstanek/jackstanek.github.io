@@ -1,0 +1,89 @@
+@font-face {
+    font-family: 'Linux Libertine'; /* normal */
+    src: url('LinLibertine_R.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Linux Libertine'; /* italic */
+    src: url('LinLibertine_RI.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Linux Libertine'; /* bold */
+    src: url('LinLibertine_RB.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Linux Libertine'; /* bold */
+    src: url('LinLibertine_RBI.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+:root {
+    --bg-color: #2a2a2a;
+    --fg-color: #f0f0f0;
+}
+
+body {
+    font-family: 'Linux Libertine', serif;
+    margin: 0;
+    color: var(--fg-color);
+    font-size: 1.15em;
+}
+
+a {
+    color: var(--fg-color);
+    transition: background-color 0.25s, color 0.25s;
+}
+
+a:hover {
+    background-color: var(--fg-color);
+    color: var(--bg-color);
+}
+
+h1 {
+    margin: 0 0 20px 0;
+    font-size: 3em;
+    text-align: center;
+    border-bottom: solid;
+    border-width: 2px;
+    padding-bottom: 7px;
+}
+
+li {
+    margin: 20px 0;
+}
+
+main {
+    padding-bottom: 5vh;
+}
+
+.wrapper {
+    background-image: linear-gradient(to bottom right, var(--bg-color), #000);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.content {
+    position: relative;
+    width: 550px;
+    margin: 0 auto;
+    top: 5vh;
+    z-index: 1;
+}
+
+#boids {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
