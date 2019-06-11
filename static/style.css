@@ -41,6 +41,7 @@ body {
 a {
     color: var(--fg-color);
     transition: background-color 0.25s, color 0.25s;
+    padding: 0 2px;
 }
 
 a:hover {
@@ -75,7 +76,7 @@ main {
 
 .content {
     position: relative;
-    width: 550px;
+    width: 450px;
     margin: 0 auto;
     top: 5vh;
     z-index: 1;
@@ -86,4 +87,5 @@ main {
     top: 0;
     left: 0;
     z-index: 0;
+    pointer-events: none;
 }
