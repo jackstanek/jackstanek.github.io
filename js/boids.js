@@ -1,16 +1,16 @@
 (function() {
     const config = {
-        MAX_SPEED: 0.1,
+        MAX_SPEED: 0.2,
         LENGTH: 8,
-        SEPARATION: 0.05,
+        SEPARATION: 0.01,
         ALIGNMENT: 0.1,
-        COHESION: 1,
-        NEIGHBORHOOD: 70
+        COHESION: 0.07,
+        NEIGHBORHOOD: 50,
+        SWARM: 0.0001,
+        DENSITY: 0.0004
     };
 
     let ctx = null, boids = [];
-
-    const mod = (x, n) => (x % n + n) % n;
 
     function Vec2(x, y) {
         this.x = x;
@@ -83,6 +83,13 @@
         return this;
     }
 
+    Vec2.prototype.set = function(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    let center = new Vec2(0, 0);
+
     function Boid(i, w, h) {
         this.id = i;
         this.pos = new Vec2(Math.random() * w,
@@ -93,8 +100,8 @@
     }
 
     Boid.prototype.update = function(dt) {
-        this.pos.x = mod(this.pos.x + this.vel.x * dt, ctx.canvas.width);
-        this.pos.y = mod(this.pos.y + this.vel.y * dt, ctx.canvas.height);
+        this.pos.x = this.pos.x + this.vel.x * dt;
+        this.pos.y = this.pos.y + this.vel.y * dt;
     }
 
     Boid.prototype.neighborhood = function(d) {
@@ -106,6 +113,7 @@
     const fitCanvasToWindow = canvas => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+        center.set(innerWidth / 2, innerHeight / 2);
     }
 
     const initCanvas = canvasId => {
@@ -116,11 +124,11 @@
         return canvas.getContext("2d");
     }
 
-    const initBoids = n => {
+    const initBoids = (w, h) => {
         let boids = [];
 
-        for (let i = 0; i < n; i++) {
-            boids[i] = new Boid(i, window.innerWidth, window.innerHeight);
+        for (let i = 0; i < w * h * config.DENSITY; i++) {
+            boids.push(new Boid(i, w, h));
         }
 
         return boids;
@@ -156,6 +164,13 @@
 
                 /* Separation */
                 b.vel.add(avgPos.to(b.pos).scaleTo(config.SEPARATION).div(b.pos.distanceTo(avgPos)));
+
+                /* Edge avoidance */
+                let radius = Math.min(window.innerWidth, window.innerHeight) / 2;
+                let toCenter = b.pos.to(center);
+                if (toCenter.norm() > radius) {
+                    b.vel.add(toCenter.scaleTo(toCenter.norm() - radius).mul(config.SWARM));
+                }
             }
 
             b.vel.clampAt(config.MAX_SPEED);
@@ -169,7 +184,7 @@
 
     window.onload = () => {
         ctx = initCanvas("boids");
-        boids = initBoids(50);
+        boids = initBoids(window.innerWidth, window.innerHeight);
         requestAnimationFrame(update);
     }
 })();
