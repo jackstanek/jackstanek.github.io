@@ -1,16 +1,19 @@
 (function() {
     const config = {
-        MAX_SPEED: 0.2,
+        MAX_DT: 100,
+        MAX_SPEED: 0.1,
         LENGTH: 8,
-        SEPARATION: 0.01,
-        ALIGNMENT: 0.1,
-        COHESION: 0.07,
+        SEPARATION: 0.015,
+        ALIGNMENT: 0.7,
+        COHESION: 0.01,
         NEIGHBORHOOD: 50,
-        SWARM: 0.0001,
+        SWARM_FACTOR: 0.000001,
+        SWARM_BASE: 1.00001,
         DENSITY: 0.0004
     };
 
     let ctx = null, boids = [];
+    let radius = Math.min(window.innerWidth, window.innerHeight) / 2;
 
     function Vec2(x, y) {
         this.x = x;
@@ -86,9 +89,12 @@
     Vec2.prototype.set = function(x, y) {
         this.x = x;
         this.y = y;
+        return this;
     }
 
-    let center = new Vec2(0, 0);
+    let screenCenter = new Vec2(window.innerWidth, window.innerHeight).div(2);
+    let swarmCenter = screenCenter.copy();
+    let timeUntilCenterChange = 5000 * Math.random() + 1000;
 
     function Boid(i, w, h) {
         this.id = i;
@@ -97,6 +103,8 @@
 
         this.vel = new Vec2((Math.random() - 0.5),
                             (Math.random() - 0.5)).scaleTo(config.MAX_SPEED);
+
+        this.max_speed = config.MAX_SPEED * Math.random() + 0.1
     }
 
     Boid.prototype.update = function(dt) {
@@ -113,7 +121,8 @@
     const fitCanvasToWindow = canvas => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-        center.set(innerWidth / 2, innerHeight / 2);
+        screenCenter.set(innerWidth / 2, innerHeight / 2);
+        radius = Math.min(window.innerWidth, window.innerHeight) / 2;
     }
 
     const initCanvas = canvasId => {
@@ -152,32 +161,46 @@
     let prevTime = 0;
     const update = (t) => {
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        let dt = t - prevTime;
 
-        boids.forEach(b => {
-            let nhood = b.neighborhood(config.NEIGHBORHOOD);
-            if (nhood.length > 0) {
-                let avgVel = avgVecs(nhood.map(b => b.vel)),
-                    avgPos = avgVecs(nhood.map(b => b.pos));
-
-                /* Alignment */
-                b.vel.add(avgVel.scaleTo(config.ALIGNMENT).div(b.pos.distanceTo(avgPos)));
-
-                /* Separation */
-                b.vel.add(avgPos.to(b.pos).scaleTo(config.SEPARATION).div(b.pos.distanceTo(avgPos)));
-
-                /* Edge avoidance */
-                let radius = Math.min(window.innerWidth, window.innerHeight) / 2;
-                let toCenter = b.pos.to(center);
-                if (toCenter.norm() > radius) {
-                    b.vel.add(toCenter.scaleTo(toCenter.norm() - radius).mul(config.SWARM));
-                }
+        timeUntilCenterChange -= dt;
+        if (timeUntilCenterChange <= 0) {
+            let pt = {
+                r: Math.sqrt(Math.random()) * radius,
+                theta: Math.random() * 2 * Math.PI
             }
 
-            b.vel.clampAt(config.MAX_SPEED);
-            b.update(t - prevTime);
-            drawBoid(b);
-        });
+            swarmCenter.set(pt.r * Math.cos(pt.theta) + window.innerWidth / 2,
+                            pt.r * Math.sin(pt.theta) + window.innerHeight / 2)
 
+            timeUntilCenterChange = 5000;
+        }
+
+        if (dt < config.MAX_DT) {
+            boids.forEach(b => {
+                let nhood = b.neighborhood(config.NEIGHBORHOOD);
+                if (nhood.length > 0) {
+                    let avgVel = avgVecs(nhood.map(b => b.vel)),
+                        avgPos = avgVecs(nhood.map(b => b.pos));
+
+                    /* Alignment */
+                    b.vel.add(avgVel.scaleTo(config.ALIGNMENT).div(b.pos.distanceTo(avgPos)));
+
+                    /* Separation */
+                    b.vel.add(nhood.reduce((a, c) => {
+                        let to = c.pos.to(b.pos);
+                        return a.add(to.mul(0.1 / to.norm()))
+                    }, new Vec2(0, 0)).scaleTo(config.SEPARATION));
+
+                    /* Cohesion */
+                    b.vel.add(b.pos.to(avgPos).scaleTo(config.COHESION));
+                }
+
+                b.vel.clampAt(b.max_speed);
+                b.update(dt);
+                drawBoid(b);
+            });
+        }
         prevTime = t;
         requestAnimationFrame(update);
     }
