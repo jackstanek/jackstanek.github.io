@@ -1,13 +1,14 @@
 (function() {
     const config = {
-        MAX_SPEED: 0.02,
+        MAX_SPEED: 0.2,
         MAX_DT: 100,           // milliseconds
         AVG_LIFETIME: 3000,    // milliseconds
         STDDEV_LIFETIME: 750,  // milliseconds
         AVG_COOLDOWN: 500,     // milliseconds
         STDDEV_COOLDOWN: 100,  // milliseconds
         FADE_TIME: 750,        // milliseconds
-        NUM_FIREFLIES: 200,
+        NUM_FIREFLIES: 150,
+        VISCOSITY: 0.97,
     };
 
     let ctx = null, fireflies = [];
@@ -116,8 +117,11 @@
     }
 
     Firefly.prototype.update = function(dt) {
+        this.vel.mul(config.VISCOSITY);
+
         this.pos.x = (this.pos.x + this.vel.x * dt) % window.innerWidth;
         this.pos.y = (this.pos.y + this.vel.y * dt) % window.innerWidth;
+
         this.lifetime += dt;
     }
 
@@ -165,6 +169,7 @@
             fireflies.forEach(f => {
                 if (f.lifetime > f.max_lifetime) {
                     f.pos = randomScreenPos();
+                    f.vel = randomVec2(-1, 1, -1, 1).scaleTo(config.MAX_SPEED);
                     f.lifetime = 0;
                 }
                 f.update(dt);
