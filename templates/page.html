@@ -1,0 +1,34 @@
+{% import "macros.html" as macros %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ section.title }}</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <header>
+	{% block header %}
+	<navbar>
+	  <a href="/">About</a>
+	  <a href="/blog">Blog</a>
+	  <a href="https://github.com/jackstanek/cv/releases/latest/cv.pdf">CV</a>
+	</navbar>
+	{% endblock header %}
+      </header>
+
+      <main>
+	{{ section.content | safe }}
+      </main>
+
+      <footer>
+	{% block footer %}
+	<span id="copyright">
+	  Copyright 2023 Jack Stanek. All rights reserved.
+	  {{ macros::licensetext() }}
+	</span>
+	{% endblock footer %}
+      </footer>
+    </div>
+  </body>
+</html>

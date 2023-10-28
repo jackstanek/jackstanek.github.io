@@ -1,0 +1,70 @@
+$highlight-color: #1EA896;
+$link-color: #EE6352;
+$clicked-color: #39304A;
+$text-color: #202030;
+
+@font-face {
+    font-family: EBGaramond;
+    src: url(EBGaramond-Regular.ttf);
+}
+
+@font-face {
+    font-family: Junction;
+    src: url(junction-regular.ttf);
+}
+
+* {
+    font-family: EBGaramond;
+    color: $text-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Junction;
+    font-style: bold;
+}
+
+h1 {
+    font-size: 42pt;
+}
+
+p {
+    font-size: 14pt;
+}
+
+a {
+    color: $link-color;
+}
+
+header {
+    height: 100px;
+}
+
+navbar {
+    text-align: right;
+}
+
+navbar > a {
+    color: $text-color;
+    text-decoration: none;
+    padding: 100px 25px 50px;
+    font-size: 24px;
+    transition-property: text-decoration;
+    transition-duration: 0.4s;
+
+    &:hover {
+	text-decoration: underline 5px $highlight-color;
+    }
+}
+
+footer {
+    text-align: center;
+}
+
+#container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+#copyright {
+    font-size: 10px;
+}
