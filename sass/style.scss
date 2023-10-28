@@ -24,19 +24,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 42pt;
+    margin-bottom: 30px;
 }
 
-p {
-    font-size: 14pt;
+p, li {
+    font-size: 20px;
+    line-height: 1.6em;
 }
 
 a {
     color: $link-color;
+    &:visited {
+        color: $clicked-color;
+    }
 }
 
 header {
-    height: 100px;
+    text-align: right;
+    margin-top: 50px;
+    padding-top: 10px;
+    border-top: solid $highlight-color;
 }
 
 navbar {
@@ -45,18 +52,21 @@ navbar {
 
 navbar > a {
     color: $text-color;
-    text-decoration: none;
-    padding: 100px 25px 50px;
+    text-decoration: transparent;
+    margin-left: 50px;
     font-size: 24px;
-    transition-property: text-decoration;
+    font-family: Junction;
+    transition-property: text-decoration, translate;
     transition-duration: 0.4s;
 
     &:hover {
-	text-decoration: underline 5px $highlight-color;
+        text-decoration: underline 3px $highlight-color;
+        translate: 100px;
     }
 }
 
 footer {
+    margin-top: 75px;
     text-align: center;
 }
 
@@ -66,5 +76,5 @@ footer {
 }
 
 #copyright {
-    font-size: 10px;
+    font-size: 12px;
 }
