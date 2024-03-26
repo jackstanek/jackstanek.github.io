@@ -1,0 +1,25 @@
+$portrait-height: 300px;
+
+#intro {
+    display: flex;
+    flex-direction: row;
+}
+
+#portrait {
+    display: inline;
+    height: $portrait-height;
+    margin: 100px 45px;
+    border-radius: 25px;
+    width: auto;
+}
+
+
+@media (max-width: 1000px) {
+    #intro {
+	flex-direction: column;
+    }
+
+    #portrait {
+	margin: 10px 40px;
+    }
+}

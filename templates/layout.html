@@ -9,6 +9,7 @@
     {% endif %}
     <title>{{ title }}{% if title != config.extra.author %} - {{ config.extra.author }}{% endif %}</title>
     <link rel="stylesheet" href="/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block headextra %}{% endblock headextra %}
   </head>
   <body>
@@ -24,6 +25,7 @@
       </header>
 
       <main>
+	<div class="content">
         {% block content %}
         {% if section.content %}
           {{ section.content | safe }}
@@ -32,6 +34,7 @@
           {{ page.content | safe }}
         {% endif %}
         {% endblock content %}
+	</div>
       </main>
 
       <footer>

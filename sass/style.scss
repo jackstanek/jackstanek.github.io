@@ -1,7 +1,10 @@
 $highlight-color: #1EA896;
 $link-color: #EE6352;
 $clicked-color: #39304A;
-$text-color: #202030;
+$background-color: #202030;
+$text-color: #E0F0E0;
+
+$container-width: 1000px;
 
 @font-face {
     font-family: EBGaramond;
@@ -16,6 +19,7 @@ $text-color: #202030;
 * {
     font-family: EBGaramond;
     color: $text-color;
+    background-color: $background-color;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -32,7 +36,7 @@ h1.blog-post-title {
 }
 
 p, li {
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1.6em;
 }
 
@@ -75,8 +79,15 @@ footer {
 }
 
 #container {
-    width: 800px;
+    width: $container-width;
     margin: 0 auto;
+}
+
+@media (max-width: $container-width) {
+    #container {
+	width: 100%;
+	margin: 0 auto;
+    }
 }
 
 #copyright {
