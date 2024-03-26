@@ -1,6 +1,6 @@
 $highlight-color: #1EA896;
 $link-color: #EE6352;
-$clicked-color: #39304A;
+// $clicked-color: #39304A;
 $background-color: #202030;
 $text-color: #E0F0E0;
 
@@ -43,7 +43,7 @@ p, li {
 a {
     color: $link-color;
     &:visited {
-        color: $clicked-color;
+        color: $link-color;
     }
 }
 
@@ -66,6 +66,10 @@ navbar > a {
     font-family: Junction;
     transition-property: text-decoration, translate;
     transition-duration: 0.4s;
+
+    &:visited {
+	color: $text-color;
+    }
 
     &:hover {
         text-decoration: underline 3px $highlight-color;
