@@ -7,6 +7,8 @@ compile_sass = true
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
+theme = "anemone"
+
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
@@ -15,3 +17,8 @@ highlight_code = true
 [extra]
 # Put all your custom variables here
 author = "Jack Stanek"
+header_nav = [
+    { url = "/", name_en = "About" },
+    { url = "/blog", name_en = "Blog" },
+    { url = "https://github.com/jackstanek/cv/releases/latest/download/cv.pdf", name_en = "CV" }
+]
