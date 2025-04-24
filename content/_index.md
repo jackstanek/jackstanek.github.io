@@ -1,16 +1,24 @@
 +++
 title = "Jack Stanek"
 +++
-# Jack Stanek
 
-I am a second-year Ph.D student at the University of Wisconsin-Madison. My
-research interests lie primarily in the fields of programming language theory
-and formal methods: how can we use formal techniques to reason about computer
-programs and their behavior?
+<div id="bio-wrapper">
+<div id="bio-inner">
+  <h1>Jack Stanek</h1>
 
-Before coming to Wisconsin, I completed my B.S. in computer science at the
-University of Minnesota-Twin Cities. I completed minors in mathematics and
-German language as well. After graduation, I worked for four years in the
-high-performance computing industry.
+  I am a second-year Ph.D student at the University of Wisconsin-Madison working
+  with <a href="https://muraliadithya.github.io/">Adithya Murali</a>. My
+  research interests lie primarily in the fields of programming language theory
+  and formal methods: how can we use formal techniques to reason about computer
+  programs and their behavior?
 
-Outside of my studies, I enjoy cooking, reading, hiking, and music.
+
+  Before coming to Wisconsin, I completed my B.S. in computer science at the
+  University of Minnesota-Twin Cities. I completed minors in mathematics and
+  German language as well. After graduation, I worked for four years in the
+  high-performance computing industry.
+
+  Outside of my studies, I enjoy cooking, reading, music, and going to the movies.
+</div>
+<img id="homeportrait" src="portrait_small.png" alt="Headshot of Jack Stanek" width="225" height="225" style="margin-left: 25px;">
+</div>
