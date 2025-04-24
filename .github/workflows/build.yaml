@@ -13,10 +13,8 @@ jobs:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
       - run: nix build
       - run: nix flake check
-      - name: Simple deploy with git
-        uses: rdarida/simple-github-pages-deploy-action@v1
+      - name: Deploy to Github Pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with: # optional
-          git-user: 'jackstanek'
-          git-email: 'jrstanek@wisc.edu'
-          git-base-folder: 'result/'
+          folder: 'result/'
           branch: 'main'
