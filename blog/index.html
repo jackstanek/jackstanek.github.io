@@ -1,54 +1,93 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    
-      
-    
-    <title>Blog - Jack Stanek</title>
-    <link rel="stylesheet" href="/style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-  </head>
-  <body>
-    <div id="container">
-      <header>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="index, follow">
         
-        <navbar>
-          <a href="/">About</a>
-          <a href="/blog">Blog</a>
-          <!-- <a href="https://github.com/jackstanek/cv/releases/latest/download/cv.pdf">CV</a> -->
-        </navbar>
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://jackstanek.github.io/rss.xml">
         
-      </header>
+        <title></title>
 
-      <main>
-	<div class="content">
+        <link rel="preload" href="https://jackstanek.github.io/css/style.css" as="style">
+        <link rel="stylesheet" href="https://raw.githack.com/Speyll/suCSS/main/reset-min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://raw.githack.com/Speyll/suCSS/main/suCSS-min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://jackstanek.github.io/css/style.css">
+        <link rel="stylesheet" href="https://jackstanek.github.io/css/custom.css">
+
+        <!-- Add favicon with appropriate sizes -->
+        <link rel="icon" href="https:&#x2F;&#x2F;jackstanek.github.io/favicon.ico">
+    </head>
+    <body>
         
-<h1>Posts</h1>
+        
+        
+        
+        <nav id="nav-bar">
+            
+            <a href="&#x2F;" class="">
+                
+                About
+            </a>
+            
+            <a href="&#x2F;blog" class="">
+                
+                Blog
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;jackstanek&#x2F;cv&#x2F;releases&#x2F;latest&#x2F;download&#x2F;cv.pdf" class="">
+                
+                CV
+            </a>
+            
+
+            <div class="theme-toggle" id="theme-toggle" role="button" tabindex="0" aria-label="Toggle theme"
+                data-icon-base="https://jackstanek.github.io/icons.svg"
+                data-icon-dark="#darkMode"
+                data-icon-light="#lightMode"
+                data-sound-src="https://jackstanek.github.io/click.ogg">
+                <svg class="icon">
+                    <use id="theme-icon"></use>
+                </svg>
+            </div>
+        </nav>
+
+        <main>
+            
+<section class="content-section">
+    <h1>Blog</h1>
+    <h1 id="posts">Posts</h1>
 
 
-    <h2>2023</h2>
-
-    <ul>
+    <ul class="content-list">
+        
+        
+            <li class="title-list">
     
-        <li><a href="https:&#x2F;&#x2F;jackstanek.github.io&#x2F;blog&#x2F;welcome&#x2F;">Oct 29 - Welcome!</a></li>
+    <time class="content-meta">2023-10-29</time>
     
+    <a href="https:&#x2F;&#x2F;jackstanek.github.io&#x2F;blog&#x2F;welcome&#x2F;" class="content-link">
+        Welcome!
+    </a>
+</li>
+
+        
     </ul>
 
+    
+</section>
 
-	</div>
-      </main>
+        </main>
 
-      <footer>
-        
-        <span id="copyright">
-          Copyright 2023 Jack Stanek. All rights reserved.
-          
-<span xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:16px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:16px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:16px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"><img style="height:16px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></span>
+        <footer>
+            <hr>
+<div id="footer-container">
+    <p>Made using <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a> Zola theme</p>
+</div>
 
-        </span>
-        
-      </footer>
-    </div>
-  </body>
+        </footer>
+
+        <!-- Move JS to end of body and add defer -->
+        <script src="https://jackstanek.github.io/js/script.js" defer></script>
+    </body>
 </html>
