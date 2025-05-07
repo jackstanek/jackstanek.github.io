@@ -7,7 +7,7 @@ title = "Jack Stanek"
   <h1>Jack Stanek</h1>
 
   I am a second-year Ph.D student at the University of Wisconsin-Madison working
-  with <a href="https://muraliadithya.github.io/">Adithya Murali</a>. My
+  with <a href="https://muraliadithya.github.io/">Prof. Adithya Murali</a>. My
   research interests lie primarily in the fields of programming language theory
   and formal methods: how can we use formal techniques to reason about computer
   programs and their behavior?
