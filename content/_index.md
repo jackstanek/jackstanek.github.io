@@ -6,7 +6,7 @@ title = "Jack Stanek"
 <div id="bio-inner">
   <h1>Jack Stanek</h1>
 
-  I am a second-year Ph.D student at the University of Wisconsin-Madison working
+  I am a third-year Ph.D student at the University of Wisconsin-Madison working
   with <a href="https://muraliadithya.github.io/">Prof. Adithya Murali</a>. My
   research interests lie primarily in the fields of programming languages,
   probabilistic programming, and machine learning.
