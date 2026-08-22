@@ -18,5 +18,18 @@ title = "Jack Stanek"
 
   Outside of my studies, I enjoy cooking, reading, music, and going to the movies.
 </div>
-<img id="homeportrait" src="portrait_small.png" alt="Headshot of Jack Stanek" width="225" height="225" style="margin-left: 25px;">
+<div id="portrait-frame">
+  <img id="homeportrait" src="portrait_small.png" alt="Headshot of Jack Stanek" width="225" height="225">
 </div>
+</div>
+
+<section>
+
+## News
+- Apr 2026: I passed my qualifying exams! I presented my recent work on
+  synthesizing probabilistic program representations of labeled-tree data.
+- Dec 2025: I received an MS in Computer Sciences from UW-Madison.
+- Jun 2024: I attended [OPLSS at Boston University](https://www.cs.uoregon.edu/research/summerschool/summer24/index.php).
+- Sep 2023: I began my PhD at UW-Madison.
+
+</section>

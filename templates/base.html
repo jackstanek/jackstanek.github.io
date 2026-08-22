@@ -2,9 +2,15 @@
 <html lang="{% if page %}{{ page.lang }}{% else %}{{ config.default_language }}{% endif %}">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link rel="stylesheet" href="{{ get_url(path='css/tufte.css') }}" />
     </head>
     <body>
+        <nav>
+            <a class="navlink" href="/">About</a>
+            <a class="navlink" href="/blog">Blog</a>
+            <a class="navlink" href="https://github.com/jackstanek/cv/releases/latest/download/cv.pdf">CV</a>
+        </nav>
         <main>
             {% block content %}{% endblock %}
         </main>
