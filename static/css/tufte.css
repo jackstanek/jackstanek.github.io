@@ -95,15 +95,18 @@ html {
 }
 
 body {
+    font-family: "source-serif-4", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    background-color: #fffff8;
+    color: #111;
+    counter-reset: sidenote-counter;
+}
+
+main {
     width: 87.5%;
     margin-left: auto;
     margin-right: auto;
     padding-left: 12.5%;
-    font-family: "source-serif-4", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-    background-color: #fffff8;
-    color: #111;
     max-width: 1400px;
-    counter-reset: sidenote-counter;
 }
 
 /* Adds dark mode */
@@ -114,6 +117,28 @@ body {
     }
 }
 
+nav {
+    box-sizing: border-box;
+    background-color: #D8BFD8;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 1.5rem 4rem;
+}
+
+.navlink {
+    font-family: cooper-hewitt;
+    font-size: 1.3rem;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    color: #333;
+}
+
+.navlink:hover {
+    text-decoration: underline;
+}
+
 h1 {
     font-family: cooper-hewitt;
     font-weight: 400;
@@ -121,6 +146,12 @@ h1 {
     margin-bottom: 1.5rem;
     font-size: 3.2rem;
     line-height: 1;
+}
+
+h1.pagetitle {
+    text-decoration: underline;
+    text-decoration-color: #9FE2BF;
+    text-decoration-thickness: 0.1em;
 }
 
 h2 {
@@ -463,6 +494,24 @@ label.margin-toggle:not(.sidenote-number) {
     display: block;
 }
 
+ul.post-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.post-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+ul.post-list .post-date {
+    font-style: italic;
+    color: #666;
+    white-space: nowrap;
+}
+
 @media (max-width: 760px) {
     #bio-wrapper {
         flex-direction: column;
@@ -476,10 +525,14 @@ label.margin-toggle:not(.sidenote-number) {
         display: none;
     }
 
-    body {
+    main {
         width: 84%;
         padding-left: 8%;
         padding-right: 8%;
+    }
+
+    nav {
+        padding: 1.5rem 8%;
     }
 
     hr,
