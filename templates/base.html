@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="{% if page %}{{ page.lang }}{% else %}{{ config.default_language }}{% endif %}">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ get_url(path='css/tufte.css') }}" />
+    </head>
+    <body>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    </body>
+</html>
