@@ -95,6 +95,10 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
     font-family: "source-serif-4", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
     background-color: #fffff8;
     color: #111;
@@ -102,19 +106,12 @@ body {
 }
 
 main {
+    flex: 1 0 auto;
     width: 87.5%;
     margin-left: auto;
     margin-right: auto;
     padding-left: 12.5%;
     max-width: 1400px;
-}
-
-/* Adds dark mode */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #151515;
-        color: #ddd;
-    }
 }
 
 nav {
@@ -127,7 +124,20 @@ nav {
     padding: 1.5rem 4rem;
 }
 
-.navlink {
+/* Adds dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #151515;
+        color: #ddd;
+    }
+
+    nav {
+        background-color: #7B517B;
+    }
+}
+
+
+a.navlink {
     font-family: cooper-hewitt;
     font-size: 1.3rem;
     letter-spacing: 0.05em;
@@ -135,8 +145,10 @@ nav {
     color: #333;
 }
 
-.navlink:hover {
-    text-decoration: underline;
+#socials .icon svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
 }
 
 h1 {
@@ -197,6 +209,10 @@ p.subtitle {
 
 .danger {
     color: red;
+}
+
+footer {
+    text-align: center;
 }
 
 article {
@@ -512,6 +528,8 @@ ul.post-list .post-date {
     white-space: nowrap;
 }
 
+
+/* Mobile-specific styling */
 @media (max-width: 760px) {
     #bio-wrapper {
         flex-direction: column;

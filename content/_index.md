@@ -1,10 +1,16 @@
 +++
 title = "Jack Stanek"
 +++
-<h1 class="pagetitle">Jack Stanek</h1>
+<header>
+    <h1 class="pagetitle">Jack Stanek</h1>
+    <div id="socials">
+        <a href="https://github.com/jackstanek">{{ icon(name="github") }}</a>
+        <a href="https://orcid.org/0009-0005-6192-2388">{{ icon(name="orcid") }}</a>
+    </div>
+</header>
+
 <div id="bio-wrapper">
 <div id="bio-inner">
-  <!--<h1 class="pagetitle">Jack Stanek</h1>-->
 
   I am a fourth-year Ph.D student at the University of Wisconsin-Madison working
   with <a href="https://muraliadithya.github.io/">Prof. Adithya Murali</a>. My
@@ -19,7 +25,7 @@ title = "Jack Stanek"
   Outside of my studies, I enjoy cooking, reading, music, and going to the movies.
 </div>
 <div id="portrait-frame">
-  <img id="homeportrait" src="portrait_small.png" alt="Headshot of Jack Stanek" width="225" height="225">
+  <img id="homeportrait" src="img/portrait_smaller.png" alt="Headshot of Jack Stanek" width="225" height="225">
 </div>
 </div>
 
