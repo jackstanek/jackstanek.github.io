@@ -137,13 +137,21 @@ nav {
 }
 
 
-a.navlink {
+nav > a.navlink {
     font-family: cooper-hewitt;
     font-size: 1.3rem;
     letter-spacing: 0.05em;
-    text-decoration: none;
     color: #333;
+    text-decoration: underline;
+    text-decoration-thickness: 0;
+    text-underline-offset: 0.2em;
+    transition: text-decoration-thickness 250ms ease;
 }
+
+nav > a.navlink:hover {
+    text-decoration-thickness: 0.2em;
+}
+
 
 #socials .icon svg {
     width: 24px;
@@ -334,6 +342,13 @@ a:visited {
     color: inherit;
     text-underline-offset: 0.1em;
     text-decoration-thickness: 0.05em;
+    transition: color 250ms ease;
+    transition: text-decoration-offset 250ms ease;
+}
+
+main a:hover {
+    color: #555;
+    text-underline-offset: 0.15em;
 }
 
 /* Sidenotes, margin notes, figures, captions */
