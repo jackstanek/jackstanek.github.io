@@ -1,0 +1,7 @@
+<label for="sn-{{ name }}"
+       class="margin-toggle sidenote-number">
+</label>
+<input type="checkbox"
+       id="sn-{{ name }}"
+       class="margin-toggle"/>
+<span class="sidenote">{{ body | markdown(inline=true) | safe }}</span>

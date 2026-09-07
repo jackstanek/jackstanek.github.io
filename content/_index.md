@@ -12,10 +12,14 @@ title = "Jack Stanek"
 <div id="bio-wrapper">
 <div id="bio-inner">
 
-  I am a fourth-year Ph.D student at the University of Wisconsin-Madison working
-  with <a href="https://muraliadithya.github.io/">Prof. Adithya Murali</a>. My
-  research interests lie primarily in the fields of programming languages,
-  probabilistic programming, and machine learning.
+  I am a fourth-year Ph.D student in the Department of Computer Sciences at the
+  University of Wisconsin-Madison advised by [Prof. Adithya
+  Murali](https://muraliadithya.github.io/). My research focus lies at the
+  intersection of programming language theory and machine learning, particularly
+  in neurosymbolic reasoning and probabilistic modelling. In particular, I am
+  interested in how unreliable neural and probabilistic systems can be
+  integrated into rigorous paradigms like automated reasoning and formal
+  verification.
 
   Before coming to Wisconsin, I completed my B.S. in computer science at the
   University of Minnesota-Twin Cities. I completed minors in mathematics and

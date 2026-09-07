@@ -124,19 +124,6 @@ nav {
     padding: 1.5rem 4rem;
 }
 
-/* Adds dark mode */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #151515;
-        color: #ddd;
-    }
-
-    nav {
-        background-color: #7B517B;
-    }
-}
-
-
 nav > a.navlink {
     font-family: cooper-hewitt;
     font-size: 1.3rem;
@@ -219,8 +206,9 @@ p.subtitle {
     color: red;
 }
 
-footer {
+body > footer {
     text-align: center;
+    padding-bottom: 20px;
 }
 
 article {
@@ -349,6 +337,27 @@ a:visited {
 main a:hover {
     color: #555;
     text-underline-offset: 0.15em;
+}
+
+/* Adds dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #151515;
+        color: #ddd;
+    }
+
+    nav {
+        background-color: #7B517B;
+    }
+
+    nav > a.navlink {
+        color: #ddd;
+    }
+
+    main a:hover {
+        color: #fff;
+        text-underline-offset: 0.15em;
+    }
 }
 
 /* Sidenotes, margin notes, figures, captions */
@@ -638,4 +647,20 @@ ul.post-list .post-date {
     img {
         width: 100%;
     }
+}
+
+/* Giallo configuraiton for syntax highlighting. */
+.giallo-l {
+    display: inline-block;
+    min-height: 1lh;
+    width: 100%;
+}
+.giallo-ln {
+    display: inline-block;
+    user-select: none;
+    margin-right: 0.4em;
+    padding: 0.4em;
+    min-width: 3ch;
+    text-align: right;
+    opacity: 0.8;
 }
