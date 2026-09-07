@@ -2,90 +2,71 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="robots" content="index, follow">
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link rel="stylesheet" href="https://jackstanek.github.io/css/tufte.css" />
         
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://jackstanek.github.io/rss.xml">
-        
-        <title></title>
-
-        <link rel="preload" href="https://jackstanek.github.io/css/style.css" as="style">
-        <link rel="stylesheet" href="https://raw.githack.com/Speyll/suCSS/main/reset-min.css" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://raw.githack.com/Speyll/suCSS/main/suCSS-min.css" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://jackstanek.github.io/css/style.css">
-        <link rel="stylesheet" href="https://jackstanek.github.io/css/custom.css">
-
-        <!-- Add favicon with appropriate sizes -->
-        <link rel="icon" href="https:&#x2F;&#x2F;jackstanek.github.io/favicon.ico">
     </head>
     <body>
-        
-        
-        
-        
-        <nav id="nav-bar">
-            
-            <a href="&#x2F;" class="">
-                
-                About
-            </a>
-            
-            <a href="&#x2F;blog" class="">
-                
-                Blog
-            </a>
-            
-            <a href="https:&#x2F;&#x2F;github.com&#x2F;jackstanek&#x2F;cv&#x2F;releases&#x2F;latest&#x2F;download&#x2F;cv.pdf" class="">
-                
-                CV
-            </a>
-            
-
-            <div class="theme-toggle" id="theme-toggle" role="button" tabindex="0" aria-label="Toggle theme"
-                data-icon-base="https://jackstanek.github.io/icons.svg"
-                data-icon-dark="#darkMode"
-                data-icon-light="#lightMode"
-                data-sound-src="https://jackstanek.github.io/click.ogg">
-                <svg class="icon">
-                    <use id="theme-icon"></use>
-                </svg>
-            </div>
+        <nav>
+            <a class="navlink" href="/">About</a>
+            <a class="navlink" href="/blog">Blog</a>
+            <a class="navlink" href="https://github.com/jackstanek/cv/releases/latest/download/cv.pdf">CV</a>
         </nav>
-
         <main>
             
-    <div id="bio-wrapper">
+    <article>
+        <header>
+    <h1 class="pagetitle">Jack Stanek</h1>
+    <div id="socials">
+        <a href="https://github.com/jackstanek">
+<span class="icon icon-github"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+</span>
+</a>
+        <a href="https://orcid.org/0009-0005-6192-2388">
+<span class="icon icon-orcid"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>ORCID</title><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z"/></svg>
+</span>
+</a>
+    </div>
+</header>
+<div id="bio-wrapper">
 <div id="bio-inner">
-  <h1>Jack Stanek</h1>
-<p>I am a third-year Ph.D student at the University of Wisconsin-Madison working
-with <a href="https://muraliadithya.github.io/">Prof. Adithya Murali</a>. My
-research interests lie primarily in the fields of programming languages,
-probabilistic programming, and machine learning.</p>
+<p>I am a fourth-year Ph.D student in the Department of Computer Sciences at the
+University of Wisconsin-Madison advised by <a rel="external" href="https://muraliadithya.github.io/">Prof. Adithya
+Murali</a>. My research focus lies at the
+intersection of programming language theory and machine learning, particularly
+in neurosymbolic reasoning and probabilistic modelling. In particular, I am
+interested in how unreliable neural and probabilistic systems can be
+integrated into rigorous paradigms like automated reasoning and formal
+verification.</p>
 <p>Before coming to Wisconsin, I completed my B.S. in computer science at the
 University of Minnesota-Twin Cities. I completed minors in mathematics and
 German language as well. After graduation, I worked for four years in the
 high-performance computing industry.</p>
 <p>Outside of my studies, I enjoy cooking, reading, music, and going to the movies.</p>
 </div>
-<img id="homeportrait" src="portrait_small.png" alt="Headshot of Jack Stanek" width="225" height="225" style="margin-left: 25px;">
+<div id="portrait-frame">
+  <img id="homeportrait" src="img/portrait_smaller.png" alt="Headshot of Jack Stanek" width="225" height="225">
 </div>
+</div>
+<section>
+<h2 id="news">News</h2>
+<ul>
+<li>Apr 2026: I passed my qualifying exams! I presented my recent work on
+synthesizing probabilistic program representations of labeled-tree data.</li>
+<li>Dec 2025: I received an MS in Computer Sciences from UW-Madison.</li>
+<li>Jun 2024: I attended <a rel="external" href="https://www.cs.uoregon.edu/research/summerschool/summer24/index.php">OPLSS at Boston University</a>.</li>
+<li>Sep 2023: I began my PhD at UW-Madison.</li>
+</ul>
+</section>
 
-
-    
-
-    
+    </article>
 
         </main>
-
         <footer>
-            <hr>
-<div id="footer-container">
-    <p>Made using <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a> Zola theme</p>
-</div>
-
+            <a href="/colophon">Colophon</a> &bull;
+            &copy; 2026 Jack Stanek &bull;
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
         </footer>
-
-        <!-- Move JS to end of body and add defer -->
-        <script src="https://jackstanek.github.io/js/script.js" defer></script>
+        
     </body>
 </html>
