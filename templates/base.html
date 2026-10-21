@@ -1,8 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
+
+{% if page.title %} {% set title = page.title %} {% elif section.title and section.title != "Jack Stanek" %} {% set title = section.title %}
+{% endif %}
+
 <html lang="{% if page %}{{ page.lang }}{% else %}{{ config.default_language }}{% endif %}">
     <head>
-        <meta charset="UTF-8">
+        <title>{% if title %}{{ title }} &middot; Jack Stanek{% else %}Jack Stanek {% endif %}</title>
+        <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link rel="icon" type="image/svg+xml" href="{{ get_url(path='favicon.svg') }}" />
         <link rel="stylesheet" href="{{ get_url(path='css/tufte.css') }}" />
         {% if page is defined and page.extra.math %}
         <link rel="stylesheet" href="{{ get_url(path='katex/katex.min.css') }}" />
@@ -14,24 +20,26 @@
             <a class="navlink" href="/blog">Blog</a>
             <a class="navlink" href="https://github.com/jackstanek/cv/releases/latest/download/cv.pdf">CV</a>
         </nav>
-        <main>
-            {% block content %}{% endblock %}
-        </main>
+        <main>{% block content %}{% endblock %}</main>
         <footer>
-            <a href="/colophon">Colophon</a> &bull;
-            &copy; 2026 Jack Stanek &bull;
+            <a href="/colophon">Colophon</a> &bull; &copy; 2026 Jack Stanek &bull;
             <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
         </footer>
         {% if page is defined and page.extra.math %}
         <script defer src="{{ get_url(path='katex/katex.min.js') }}"></script>
-        <script defer src="{{ get_url(path='katex/contrib/auto-render.min.js') }}"
-            onload="renderMathInElement(document.body, {
-                delimiters: [
-                    {left: '$$', right: '$$', display: true},
-                    {left: '\\(', right: '\\)', display: false},
-                    {left: '\\[', right: '\\]', display: true}
-                ]
-            });"></script>
+        <script
+            defer
+            src="{{ get_url(path='katex/contrib/auto-render.min.js') }}"
+            onload="
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        { left: '$$', right: '$$', display: true },
+                        { left: '\\(', right: '\\)', display: false },
+                        { left: '\\[', right: '\\]', display: true },
+                    ],
+                })
+            "
+        ></script>
         {% endif %}
     </body>
 </html>
