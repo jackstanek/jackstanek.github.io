@@ -43,7 +43,7 @@
 #edu(
   [Sep 2023 --- Current],
   [University of Wisconsin -- Madison],
-  [PhD in Computer Sciences]
+  [PhD in Computer Sciences (in progress)]
 )
 #edu(
   [Sep 2023 --- Dec 2025],
