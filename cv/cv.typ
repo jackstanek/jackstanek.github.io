@@ -11,6 +11,12 @@
   columns: (3.8cm, 1fr), column-gutter: 1.4em,
   align(right)[#smallcaps(date)], body,
 )
+#let edu(date, inst, ..details) = grid(
+  columns: (3.8cm, 1fr), column-gutter: 1.4em,
+  align(right)[#smallcaps(date)], strong(inst) 
+    + "\n"
+    + text(size: 9pt, style: "italic", details.pos().join("\n"))
+)
 #let details(body) = block(width: 100%, below: 2em)[
   #set text(size: 9pt)
   #set list(indent: 2.5em, spacing: 11pt)
@@ -28,15 +34,35 @@
   ],
 )
 
+#show bibliography: body => {
+  show regex("Stanek, J(\.|ack)|J(\.|ack) Stanek"): strong
+  body
+}
+
 = Education
-#entry([Sep 2023 -- Current], [*University of Wisconsin -- Madison* \ _PhD in Computer Sciences_])
-#entry([Sep 2023 -- Dec 2025], [*University of Wisconsin -- Madison* \ _MS in Computer Sciences_ \ GPA: 4.0 / 4.0])
-#entry([Sep 2015 -- May 2019], [*University of Minnesota -- Twin Cities* \ _BS in Computer Science; awarded with distinction_ \ GPA: 3.8 / 4.0])
+#edu(
+  [Sep 2023 --- Current],
+  [University of Wisconsin -- Madison],
+  [PhD in Computer Sciences]
+)
+#edu(
+  [Sep 2023 --- Dec 2025],
+  [University of Wisconsin -- Madison],
+  [MS in Computer Sciences],
+  // [GPA: 4.0 / 4.0]
+)
+#edu(
+  [Sep 2015 --- May 2019],
+  [University of Minnesota -- Twin Cities],
+  [BS in Computer Science; awarded with distinction],
+  [Minors: Mathematics, German],
+  // [GPA: 3.8 / 4.0]
+)
 
 = Research Experience
 #entry([Jan 2025 -- Current], [*Stochastic Summaries and Neurosymbolic Reasoning* \ #text(size: 8pt)[(Under the supervision of #link("https://muraliadithya.github.io/")[Adithya Murali])]])
 #details[
-- Developing techniques to integrate LLMs into SMT and logic programming systems for sound reasoning over natural-language theories and real-world knowledge
+- Developing techniques to integrate LLMs with SMT solvers for sound reasoning over open-texture natural-language theories and real-world knowledge
 - Designed a probabilistic programming language with guarded recursion and exact inference, and built a program synthesis framework in Rust to learn generative models of tree-like data #cite(<stanekStochastic2026>)
 - Developed a prototype algorithm to construct diverse models of logical formulas, helping proof engineers uncover cognitive blind spots and construct non-obvious counter-examples in verification workflows
 ]
@@ -77,6 +103,6 @@
 #entry([May 2017 -- May 2019], [College of Science and Engineering Dean's List \ #text(size: 8pt)[University of Minnesota]])
 #entry([May 2015], [Robert E. Rice Computer Engineering Scholarship \ #text(size: 8pt)[University of Minnesota]])
 
-= Spoken Languages
+= Languages
 #entry([English], [Native fluency])
-#entry([German], [Working proficiency])
+#entry([German], [Moderate proficiency])

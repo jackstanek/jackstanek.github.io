@@ -1,5 +1,6 @@
 stanekStochastic2026:
   type: report
+  genre: Preprint
   title: 'Stochastic Summaries: Characterizing Structured Datasets Using Probabilistic Programs'
   url:
     value: http://arxiv.org/abs/2611.01189
