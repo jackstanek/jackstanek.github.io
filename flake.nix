@@ -11,18 +11,21 @@
         pkgs = nixpkgs.legacyPackages.${system};
         packageName = "jackstanek-github-io";
         deps = [pkgs.zola pkgs.typst];
+        fontPaths = pkgs.lib.makeSearchPath "share/fonts" [pkgs.source-serif pkgs.cooper-hewitt];
       in {
         devShells.default = pkgs.mkShell {
           buildInputs = deps;
+          TYPST_FONT_PATHS = fontPaths;
         };
         packages.default = pkgs.stdenvNoCC.mkDerivation {
           name = "website";
           src = self;
           buildInputs = deps;
+          TYPST_FONT_PATHS = fontPaths;
           phases = ["unpackPhase" "buildPhase" "installPhase"];
           buildPhase = ''
             zola build
-            typst compile --font-path ${pkgs.dejavu_fonts}/share/fonts/truetype --root . cv/cv.typ public/cv.pdf
+            typst compile --root . cv/cv.typ public/cv.pdf
           '';
           installPhase = ''
             mkdir -p $out

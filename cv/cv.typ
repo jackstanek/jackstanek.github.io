@@ -1,20 +1,22 @@
 #set page(paper: "us-letter", margin: 1in)
-#set text(font: "Libertinus Serif", size: 10pt)
+#set text(font: "Source Serif 4", size: 10pt)
 #set par(leading: 0.55em)
 #show link: set text(fill: rgb("#005078"))
 #set heading(numbering: none)
-#show heading.where(level: 1): it => block(above: 0.8em, below: 0.3em)[#text(font: "DejaVu Sans", size: 16pt)[#it.body]]
-#show heading.where(level: 2): it => block(above: 0.5em, below: 0.3em)[#text(font: "DejaVu Sans", size: 12pt)[#it.body]]
-#show list: set list(indent: 0.5em, body-indent: 0.5em, spacing: 0pt)
+// Cooper Hewitt’s font files use nonstandard weight values: 707 is Medium.
+#show heading: set text(font: "Cooper Hewitt", weight: 707, size: 16pt)
+#show heading: set block(above: 1.2em, below: 1em)
 
 #let entry(date, body) = grid(
   columns: (4cm, 1fr), column-gutter: 0.5em,
   align(right)[#smallcaps(date)], body,
 )
-#let details(body) = block(width: 100%, below: 0.6em, text(size: 9pt, body))
+#let details(body) = block(width: 100%, below: 1.7em, text(size: 9pt, body))
 
 #grid(columns: (auto, auto), column-gutter: 1.5em, align: horizon,
-  text(size: 24pt)[Jack Stanek],
+  text(font: "Cooper Hewitt", size: 28pt, weight: 707)[
+    #underline("Jack Stanek", stroke: 0.1em + rgb("#9FE2BF"), offset: 0.15em)
+  ],
   block(stroke: (left: 0.5pt), inset: (left: 1em))[
     #link("mailto:jstanek@cs.wisc.edu") \
     #link("https://jackstanek.github.io") \
@@ -25,7 +27,7 @@
 = Education
 #entry([Sep 2023 -- Current], [*University of Wisconsin -- Madison* \ _PhD in Computer Sciences_])
 #entry([Sep 2023 -- Dec 2025], [*University of Wisconsin -- Madison* \ _MS in Computer Sciences_ \ GPA: 4.0 / 4.0])
-#entry([Sep 2015 -- May 2019], [*University of Minnesota -- Twin Cities* \ _BS in Computer Science; awarded with distinction_])
+#entry([Sep 2015 -- May 2019], [*University of Minnesota -- Twin Cities* \ _BS in Computer Science; awarded with distinction_ \ GPA: 3.8 / 4.0])
 
 = Research Experience
 #entry([Jan 2025 -- Current], [*Stochastic Summaries and Neurosymbolic Reasoning* \ #text(size: 8pt)[(Under the supervision of #link("https://muraliadithya.github.io/")[Adithya Murali])]])
