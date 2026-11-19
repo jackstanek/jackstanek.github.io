@@ -1,0 +1,14 @@
+stanekStochastic2026:
+  type: report
+  title: 'Stochastic Summaries: Characterizing Structured Datasets Using Probabilistic Programs'
+  url:
+    value: http://arxiv.org/abs/2611.01189
+    date: 2026-11-03
+  parent:
+    title: arXiv.org
+  date: 2026-10-31
+  serial-number:
+    doi: 10.48550/arXiv.2611.01189
+  author:
+    - Stanek, Jack
+    - Murali, Adithya

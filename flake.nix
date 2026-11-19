@@ -10,7 +10,7 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
         packageName = "jackstanek-github-io";
-        deps = [pkgs.zola];
+        deps = [pkgs.zola pkgs.typst];
       in {
         devShells.default = pkgs.mkShell {
           buildInputs = deps;
@@ -22,6 +22,7 @@
           phases = ["unpackPhase" "buildPhase" "installPhase"];
           buildPhase = ''
             zola build
+            typst compile --font-path ${pkgs.dejavu_fonts}/share/fonts/truetype --root . cv/cv.typ public/cv.pdf
           '';
           installPhase = ''
             mkdir -p $out

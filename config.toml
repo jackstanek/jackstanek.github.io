@@ -19,5 +19,5 @@ author = "Jack Stanek"
 header_nav = [
     { url = "/", name_en = "About" },
     { url = "/blog", name_en = "Blog" },
-    { url = "https://github.com/jackstanek/cv/releases/latest/download/cv.pdf", name_en = "CV" }
+    { url = "/cv.pdf", name_en = "CV" }
 ]
