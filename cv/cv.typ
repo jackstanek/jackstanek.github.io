@@ -8,10 +8,14 @@
 #show heading: set block(above: 1.2em, below: 1em)
 
 #let entry(date, body) = grid(
-  columns: (4cm, 1fr), column-gutter: 0.5em,
+  columns: (3.8cm, 1fr), column-gutter: 1.4em,
   align(right)[#smallcaps(date)], body,
 )
-#let details(body) = block(width: 100%, below: 1.7em, text(size: 9pt, body))
+#let details(body) = block(width: 100%, below: 2em)[
+  #set text(size: 9pt)
+  #set list(indent: 2.5em, spacing: 11pt)
+  #body
+]
 
 #grid(columns: (auto, auto), column-gutter: 1.5em, align: horizon,
   text(font: "Cooper Hewitt", size: 28pt, weight: 707)[
@@ -33,7 +37,7 @@
 #entry([Jan 2025 -- Current], [*Stochastic Summaries and Neurosymbolic Reasoning* \ #text(size: 8pt)[(Under the supervision of #link("https://muraliadithya.github.io/")[Adithya Murali])]])
 #details[
 - Developing techniques to integrate LLMs into SMT and logic programming systems for sound reasoning over natural-language theories and real-world knowledge
-- Designed a probabilistic programming language with guarded recursion and exact inference; built a program synthesis framework in Rust to learn generative models of tree-like data
+- Designed a probabilistic programming language with guarded recursion and exact inference, and built a program synthesis framework in Rust to learn generative models of tree-like data #cite(<stanekStochastic2026>)
 - Developed a prototype algorithm to construct diverse models of logical formulas, helping proof engineers uncover cognitive blind spots and construct non-obvious counter-examples in verification workflows
 ]
 #entry([Jan 2024 -- May 2024], [*Gradual Information Flow Types with Secure Downgrading* \ #text(size: 8pt)[(Under the supervision of #link("https://cecchetti.sites.cs.wisc.edu/")[Ethan Cecchetti])]])
@@ -52,13 +56,14 @@
 - Designed HPC hardware observability features in system administrator-oriented tooling, enabling a system-wide view of hardware state to speed up routine management and diagnostic tasks
 ]
 
+#pagebreak(weak: true)
+
 = Technical Skills
 #entry([Languages], [Python, Rust, C++, Haskell, Java, OCaml])
-#entry([Verification & PL], [Formal semantics, type systems, program synthesis, proof assistants])
-#entry([Machine Learning], [PyTorch, NumPy, probabilistic programming, Monte Carlo methods])
+#entry([PL Theory], [Formal verification, program synthesis, SMT solving, type systems, proof assistants])
+#entry([Machine Learning], [PyTorch, NumPy, agentic systems, neurosymbolic reasoning and learning, probabilistic programming, Bayesian reasoning, Monte Carlo methods])
 
-= Teaching
-== Teaching Assistantships
+= Teaching Assistantships
 #entry([Spring 2025], [CS 536: Intro to Compilers])
 #entry([Fall 2024], [CS 559: Intro to Computer Graphics])
 #entry([Spring 2024], [CS 577: Intro to Algorithms])
